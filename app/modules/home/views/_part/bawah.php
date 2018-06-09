@@ -206,6 +206,7 @@
 <!-- jQuery 3 -->
 <script src="<?php echo tema()?>bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
+
 <script src="<?php echo tema()?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- DataTables -->
 <script src="<?php echo tema()?>bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
@@ -213,17 +214,22 @@
 <!-- SlimScroll -->
 <script src="<?php echo tema()?>bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
+<script src="<?php echo tema()?>iCheck/icheck.min.js"></script>
 <script src="<?php echo tema()?>bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
+
 <script src="<?php echo tema()?>dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo tema()?>dist/js/demo.js"></script>
 <script src="<?php echo tema()?>bower_components/select2/dist/js/select2.js"></script>
 <script src="<?php echo tema()?>bootstrap-sweetalert-master/dist/sweetalert.min.js"></script>
+ 
 <!-- page script -->
 <script>
   $(function () {
-    $('#example1').DataTable()
+    $('#example1').DataTable({
+      
+    })
     $('#example2').DataTable({
       'paging'      : true,
       'lengthChange': false,
@@ -242,9 +248,11 @@
     "sDom": '<""l>t<"F"fp>'
   });  
   $('.sidebar-menu').tree();
-  $('#select').select2({
-   
-  });
+  $('#select').select2({});
+  $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+      checkboxClass: 'icheckbox_minimal-blue',
+      radioClass   : 'iradio_minimal-blue'
+    });
 });
 </script>
 
@@ -286,6 +294,93 @@ swal("Akses Di Tolak!", "Anda Tidak Di Ijinkan Akses!", "error")</script>
 
 
         var url1= "<?php echo site_url('api/nonactivemenu/') ?>";
+
+          if (!isConfirm) return;
+          $.ajax({
+              url: url1+id,
+              type: "POST",
+
+              dataType: "HTML",
+              success: function () {
+                  setTimeout(function () {
+                      swal(" request finished!");
+                      window.location.reload();
+            }, 2000);
+
+
+              },
+              error: function (xhr, ajaxOptions, thrownError) {
+                  swal("Error Update!", "Anda Tidak Punya Akses!", "error");
+              }
+
+          });
+
+    });
+    }
+
+    </script>
+    <script>
+function hapuspermission($d) {
+    var id = $d;
+
+      swal({
+    title: "Apa Anda Yakinss?",
+    text: " !"+id,
+    type: "warning",
+    showCancelButton: true,
+    closeOnConfirm: false,
+    showLoaderOnConfirm: true
+    },
+
+
+     function (isConfirm) {
+
+
+
+        var url1= "<?php echo site_url('api/hapuspermission/') ?>";
+
+          if (!isConfirm) return;
+          $.ajax({
+              url: url1+id,
+              type: "POST",
+
+              dataType: "HTML",
+              success: function () {
+                  setTimeout(function () {
+                      swal(" request finished!");
+                      window.location.reload();
+            }, 2000);
+
+
+              },
+              error: function (xhr, ajaxOptions, thrownError) {
+                  swal("Error Update!", "Anda Tidak Punya Akses!", "error");
+              }
+
+          });
+
+    });
+    }
+    </script>
+    <script type="text/javascript">
+    function hapusgroup($d) {
+    var id = $d;
+
+      swal({
+    title: "Apa Anda Yakin?",
+    text: " !"+id,
+    type: "warning",
+    showCancelButton: true,
+    closeOnConfirm: false,
+    showLoaderOnConfirm: true
+    },
+
+
+     function (isConfirm) {
+
+
+
+        var url1= "<?php echo site_url('api/hapusgroup/') ?>";
 
           if (!isConfirm) return;
           $.ajax({

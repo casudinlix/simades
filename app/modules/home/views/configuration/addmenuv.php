@@ -3,7 +3,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Tambah Menu Baru
+        Tambah Group Baru
         
       </h1>
        

@@ -55,5 +55,26 @@ function hapusmenu(){
 
 
 }
+function hapusgroup(){
+  if ($this->access->getdelete($this->session->userdata('group_id'))==FALSE) {
+      $this->session->set_flashdata('access', 'value');
+      show_404();
+
+    }
+    $this->db->where('id', $this->uri->segment(3));
+ 
+  $this->db->delete('users_group');
+}
+function hapuspermission(){
+   if ($this->access->getdelete($this->session->userdata('group_id'))==FALSE) {
+      $this->session->set_flashdata('access', 'value');
+      show_404();
+
+    }
+    $this->db->where('id', $this->uri->segment(3));
+ 
+  $query=$this->db->delete('users_permission');
+  
+}
 }
 

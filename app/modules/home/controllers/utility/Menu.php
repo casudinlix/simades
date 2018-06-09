@@ -23,13 +23,13 @@ public function __construct()
 		$data['title']="Akses Menu";
 		$data['app']=$this->home->getapp()->row();
 		
-		$data['menu']=$this->home->getmenulist()->result();
+		$data['menu']=$this->home->getuser()->result();
 		$this->load->view('_part/atas', $data);
 		$this->load->view('utility/utilitymenu', $data);
 		$this->load->view('_part/bawah', $data);
 		
 	}
-	function addmenu(){
+	function addmenuakses(){
 		if ($this->access->getcreate($this->session->userdata('group_id'))==FALSE) {
 			$this->session->set_flashdata('access', 'value');
 			redirect($_SERVER['HTTP_REFERER']);
@@ -38,11 +38,21 @@ public function __construct()
 		$data['group']=$this->home->getprofil($this->session->userdata('user_login_id'))->row();
 		$data['title']="Akses Menu";
 		$data['app']=$this->home->getapp()->row();
-		
-		$data['menu']=$this->home->getmenulist()->result();
+		$data['user']=$this->home->getuserdetil(base64_decode($this->uri->segment(5)))->row();
+		$data['menu']=$this->home->getpermission(base64_decode($this->uri->segment(5)))->result();	
+		$data['menulist']=$this->home->getmenulist()->result();
 		$this->load->view('_part/atas', $data);
 		$this->load->view('utility/utilitymenuadd', $data);
 		$this->load->view('_part/bawah', $data);
+	}
+	function savemenuakses(){
+		$data=['users_login_id'=>base64_decode($this->input->post('id')),
+		'menus_id'=>$this->input->post('menuid', TRUE)];
+		$this->db->insert('users_permission', $data);
+		$this->session->set_flashdata('susscess','value');
+
+redirect($_SERVER['HTTP_REFERER']);
+
 	}
 
 }

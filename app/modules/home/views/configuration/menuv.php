@@ -46,9 +46,9 @@
 <td><?php echo $key->menu?></td>
 <td><?php echo $key->link?></td>
 <?php if($key->is_published==1):?>
-  <td><center><span class="label pull-right bg-blue">YES</span></center></td>
+  <td><center><span class="label pull-right bg-blue">YA</span></center></td>
   <?php else:?>
-    <td><span class="label pull-right bg-red">NO</span></td>
+    <td><span class="label pull-right bg-red">TIDAK</span></td>
   <?php endif;?>
 <td><i class="fa <?php echo $key->icon?>"></i></td>
 <td>

@@ -60,12 +60,20 @@ $route['home/menu/add/save'] =  "home/Configuration/menuconfig/savemenu";
 $route['home/menu/edit/(:any)'] =  "home/Configuration/menuconfig/editmenu/$1";
 $route['home/menu/add/update'] =  "home/Configuration/menuconfig/updatemenu";
 $route['home/utility/menu'] =  "home/utility/menu";
-$route['home/utility/menu/add'] =  "home/utility/menu/addmenu";
+
 //menu
 //group
 $route['home/group'] =  "home/Configuration/groupconfig";
-
+$route['home/group/add'] =  "home/Configuration/groupconfig/addgroup";
+$route['home/group/edit/(:any)'] =  "home/Configuration/groupconfig/editgroup/$1";
+$route['home/group/add/save'] =  "home/Configuration/groupconfig/savegroup";
+$route['home/group/add/update'] =  "home/Configuration/groupconfig/updategroup";
 $route['home/menu/nonactive/(:any)'] =  "api/nonactivemenu/$1";
+
+//Utility
+$route['home/utility/menu/add/(:any)'] =  "home/utility/menu/addmenuakses/$1";
+$route['home/utility/menu/save'] =  "home/utility/menu/savemenuakses";
+
 $route['dashboard/utility/roles/delete/(:any)'] =  "dashboard/permission/roles_perm/hapusroles/$1";
 $route['dashboard/utility/menu/add'] =  "dashboard/permission/permission/addmenu";
 $route['dashboard/utility/menu/actionadd'] =  "dashboard/permission/permission/actionaddmenu";

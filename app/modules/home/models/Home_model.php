@@ -27,6 +27,25 @@ public function __construct()
 	function menudetil($id){
 return $this->db->get_where('menus',['id'=>$id]);
 	}
+	function getgrop(){
+		return $this->db->get('users_group');
+	}
+
+	function getdetilgroup($id){
+return $this->db->get_where('users_group',['id'=>$id]);
+	}
+	function getaksesmenu($id){
+		return $this->db->get_where('view_permission',['id'=>$id]);
+	}
+	function getuser(){
+		return $this->db->get('users_login');
+	}
+	function getuserdetil($id){
+		return $this->db->get_where('view_users',['users_id'=>$id]);
+	}
+	function getpermission($id){
+return $this->db->get_where('view_permission',['users_login_id'=>$id]);
+	}
 
 }
 
