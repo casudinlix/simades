@@ -223,7 +223,17 @@
 <script src="<?php echo tema()?>dist/js/demo.js"></script>
 <script src="<?php echo tema()?>bower_components/select2/dist/js/select2.js"></script>
 <script src="<?php echo tema()?>bootstrap-sweetalert-master/dist/sweetalert.min.js"></script>
- 
+ <script>
+function angka(evt) {
+  var charCode = (evt.which) ? evt.which : event.keyCode
+  if (charCode > 31 && (charCode < 48 || charCode > 57))
+
+  return false;
+  return true;
+}
+
+
+</script>
 <!-- page script -->
 <script>
   $(function () {
@@ -241,6 +251,14 @@
   })
 </script>
 <script>
+  function show() {
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
   $(document).ready(function(){
    $('#data-table').dataTable({
     "bJQueryUI": true,
@@ -253,6 +271,7 @@
       checkboxClass: 'icheckbox_minimal-blue',
       radioClass   : 'iradio_minimal-blue'
     });
+  
 });
 </script>
 
@@ -319,12 +338,100 @@ swal("Akses Di Tolak!", "Anda Tidak Di Ijinkan Akses!", "error")</script>
     }
 
     </script>
+    <script type="text/javascript">
+    function nonactiveuser($d) {
+    var id = $d;
+
+      swal({
+    title: "Apa Anda Yakin?",
+    text: " !"+id,
+    type: "warning",
+    showCancelButton: true,
+    closeOnConfirm: false,
+    showLoaderOnConfirm: true
+    },
+
+
+     function (isConfirm) {
+
+
+
+        var url1= "<?php echo site_url('api/nonactiveuser/') ?>";
+
+          if (!isConfirm) return;
+          $.ajax({
+              url: url1+id,
+              type: "POST",
+
+              dataType: "HTML",
+              success: function () {
+                  setTimeout(function () {
+                      swal(" request finished!");
+                      window.location.reload();
+            }, 2000);
+
+
+              },
+              error: function (xhr, ajaxOptions, thrownError) {
+                  swal("Error Update!", "Anda Tidak Punya Akses!", "error");
+              }
+
+          });
+
+    });
+    }
+
+    </script>
+    <script type="text/javascript">
+    function activeuser($d) {
+    var id = $d;
+
+      swal({
+    title: "Apa Anda Yakin?",
+    text: " !"+id,
+    type: "warning",
+    showCancelButton: true,
+    closeOnConfirm: false,
+    showLoaderOnConfirm: true
+    },
+
+
+     function (isConfirm) {
+
+
+
+        var url1= "<?php echo site_url('api/activeuser/') ?>";
+
+          if (!isConfirm) return;
+          $.ajax({
+              url: url1+id,
+              type: "POST",
+
+              dataType: "HTML",
+              success: function () {
+                  setTimeout(function () {
+                      swal(" request finished!");
+                      window.location.reload();
+            }, 2000);
+
+
+              },
+              error: function (xhr, ajaxOptions, thrownError) {
+                  swal("Error Update!", "Anda Tidak Punya Akses!", "error");
+              }
+
+          });
+
+    });
+    }
+
+    </script>
     <script>
 function hapuspermission($d) {
     var id = $d;
 
       swal({
-    title: "Apa Anda Yakinss?",
+    title: "Apa Anda Yakin?",
     text: " !"+id,
     type: "warning",
     showCancelButton: true,

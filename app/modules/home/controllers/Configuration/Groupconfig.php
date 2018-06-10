@@ -10,6 +10,11 @@ public function __construct()
       $this->load->model('access');
       $this->load->model('home_model','home');
       $this->load->model('m_global','global');
+      if (!$this->session->userdata('login')==TRUE) {
+	  	
+	  	$this->session->set_flashdata('error', 'value');
+	  	redirect('welcome','refresh');
+	  }
 
 }
 	public function index()

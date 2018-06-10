@@ -73,6 +73,12 @@ $route['home/menu/nonactive/(:any)'] =  "api/nonactivemenu/$1";
 //Utility
 $route['home/utility/menu/add/(:any)'] =  "home/utility/menu/addmenuakses/$1";
 $route['home/utility/menu/save'] =  "home/utility/menu/savemenuakses";
+//user
+$route['home/configuration/users'] =  "home/Configuration/usersconfig";
+$route['home/configuration/users/add'] =  "home/Configuration/usersconfig/usersadd";
+$route['home/configuration/users/save'] =  "home/Configuration/usersconfig/usersave";
+$route['home/configuration/users/edit/(:any)'] =  "home/Configuration/usersconfig/edituser/$1";
+$route['home/configuration/users/save/edit'] =  "home/Configuration/usersconfig/updateusers";
 
 $route['dashboard/utility/roles/delete/(:any)'] =  "dashboard/permission/roles_perm/hapusroles/$1";
 $route['dashboard/utility/menu/add'] =  "dashboard/permission/permission/addmenu";

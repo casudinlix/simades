@@ -71,11 +71,11 @@ function get_all_menu(){
                             // level 3
                             $menu3 = $ci->menus->get_list_menus($ci->session->user_login_id, 3, $id);
                             if(count($menu3) > 0) {
-                                $menu_list .= '<li class="treeview"><a class="dropdown-toggle"><span class="menu-text">'.$m2['menu'].'</span><i class="menu-icon fa '.$m['icon'].'"</a></i>';
+                                $menu_list .= '<li class="treeview"><a class="dropdown-toggle"><span class="menu-text">'.$m2['menu'].'</span><i class="menu-icon fa '.$m['icon'].'"</i></a>';
                                 $menu_list .= '<ul class="treeview-menu">';
                                 foreach($menu3 as $m3) {
                                     // $active = ($ci->uri->segment(1) == $m3['link']) ? 'class="active"':'';
-                                    $menu_list .= '<li><i class="menu-icon fa '.$m['icon'].'"</a></i><a href="'.base_url($m3['link']).'">'.$m3['menu'].'</a></li>';
+                                    $menu_list .= '<li><i class="menu-icon fa '.$m['icon'].'</i>"</a><a href="'.base_url($m3['link']).'">'.$m3['menu'].'</a></li>';
                                 }
                                 $menu_list .= '</ul></li>';
                             } else {

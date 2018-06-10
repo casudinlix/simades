@@ -33,10 +33,10 @@
            <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Nama Pengguna</th>
-                  <th>Nama menu</th>
-                   <th>Active</th>
-                  <th>Action</th>
+                  <th class="info">Nama Pengguna</th>
+                  <th class="info">Email</th>
+                   <th class="info">Active</th>
+                  <th class="warning">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -61,11 +61,11 @@
    <?php endforeach;?>             
                 <tfoot>
                 <tr>
-                  <th>Nama User</th>
+                  <th class="info">Nama User</th>
                    
-                  <th>Email</th>
-                   <th>Active</th>
-                  <th>Action</th>
+                  <th class="info">Email</th>
+                   <th class="info">Active</th>
+                  <th class="warning">Action</th>
                 </tr>
                 </tfoot>
               </table>

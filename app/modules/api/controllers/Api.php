@@ -10,6 +10,11 @@ class Api extends MX_Controller {
       if(!$this->input->is_ajax_request()){
         exit('No direct script access allowed :)');
     }
+    if (!$this->session->userdata('login')==TRUE) {
+      
+      $this->session->set_flashdata('error', 'value');
+      redirect('welcome','refresh');
+    }
  $this->load->model('access');
  $this->load->model('api_model','api');
     }
@@ -74,7 +79,29 @@ function hapuspermission(){
     $this->db->where('id', $this->uri->segment(3));
  
   $query=$this->db->delete('users_permission');
-  
+
+}
+function activeuser(){
+if ($this->access->getupdate($this->session->userdata('group_id'))==FALSE) {
+      $this->session->set_flashdata('access', 'value');
+      show_404();
+
+    }
+      
+  $data=array('active'=>1);
+  $this->db->where('id', $this->uri->segment(3));
+  $this->db->update('users_login', $data);
+}
+function nonactiveuser(){
+if ($this->access->getupdate($this->session->userdata('group_id'))==FALSE) {
+      $this->session->set_flashdata('access', 'value');
+      show_404();
+
+    }
+      
+  $data=array('active'=>0);
+  $this->db->where('id', $this->uri->segment(3));
+  $this->db->update('users_login', $data);
 }
 }
 

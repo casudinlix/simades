@@ -46,6 +46,12 @@ return $this->db->get_where('users_group',['id'=>$id]);
 	function getpermission($id){
 return $this->db->get_where('view_permission',['users_login_id'=>$id]);
 	}
+function getuserall(){
+	return $this->db->get('view_users');
+}
+function getgroup(){
+	return $this->db->get('users_group');
+}
 
 }
 

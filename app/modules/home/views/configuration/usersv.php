@@ -3,8 +3,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Menu
-        <small>Data Menu Aplikasi</small>
+        Pengguna
+        <small>Data Pengguna Aplikasi</small>
       </h1>
       
     </section>
@@ -17,7 +17,7 @@
         <div class="box-header with-border">
           <h3 class="box-title">
              
-            <a href="<?php echo site_url('home/menu/add') ?>" class="btn btn-info" title="Tambah Menu Baru"><i class="fa fa-plus"></i></a>
+            <a href="<?php echo site_url('home/configuration/users/add') ?>" class="btn btn-info" title="Tambah Menu Baru"><i class="fa fa-plus"></i></a>
              
           </h3>
 
@@ -33,33 +33,36 @@
            <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th class="info">Nama Menu</th>
-                  <th class="info">Link menu</th>
-                  <th class="info">Active</th>
-                  <th class="info">Icon</th>
-                  <th class="danger">Action</th>
+                  <th>NIP</th>
+                  <th>Nama</th>
+                  <th>Email</th>
+                  <th>Group</th>
+                  <th>Active</th>
+                  <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
- <?php foreach($menu as $key):?>
-<td><?php echo $key->menu?></td>
-<td><?php echo $key->link?></td>
-<?php if($key->is_published==1):?>
+ <?php foreach($users as $key):?>
+<td><?php echo $key->user_nip?></td>
+<td><?php echo $key->username?></td>
+<td><?php echo $key->email?></td>
+<td><?php echo $key->group_name?></td>
+<?php if($key->active==1):?>
   <td><center><span class="label pull-right bg-blue">YA</span></center></td>
   <?php else:?>
     <td><span class="label pull-right bg-red">TIDAK</span></td>
   <?php endif;?>
-<td><i class="fa <?php echo $key->icon?>"></i></td>
-<td>
-  <a class="btn btn-success" href="<?php echo site_url('home/menu/edit/').clean($key->id)?>"><i class="fa fa-pencil" title="Edit"></i></a>
- <a class="btn btn-danger" href="#" onclick="hapusmenu('<?php echo $key->id?>')"><i class="fa fa-trash-o" title="Active menu"></i></a>
-
-<?php if($key->is_published==0):?>
  
-<a class="btn btn-info" href="#" onclick="activemenu('<?php echo $key->id?>')"><i class="fa fa-child" title="Active menu"></i></a>
+<td>
+  <a class="btn btn-success" href="<?php echo site_url('home/configuration/users/edit/').clean($key->users_id)?>"><i class="fa fa-pencil" title="Edit"></i></a>
+ 
+
+<?php if($key->active==0):?>
+ 
+<a class="btn btn-info" href="#" onclick="activeuser('<?php echo $key->users_id?>')"><i class="fa fa-child" title="Active UPengguna"></i></a>
     <?php else:?>
-<a class="btn btn-warning" href="#" onclick="nonactive('<?php echo $key->id?>')"><i class="fa f fa-power-off" title="Non Active"></i></a>
+<a class="btn btn-warning" href="#" onclick="nonactiveuser('<?php echo $key->users_id?>')"><i class="fa f fa-power-off" title="Non Active"></i></a>
   <?php endif;?>
 
 
@@ -71,11 +74,12 @@
    <?php endforeach;?>             
                 <tfoot>
                 <tr>
-                  <th class="info">Nama Menu</th>
-                  <th class="info">Link menu</th>
-                  <th class="info">Active</th>
-                  <th class="info">Icon</th>
-                  <th class="danger">Action</th>
+                  <th>NIP</th>
+                  <th>Nama</th>
+                  <th>Email</th>
+                  <th>Group</th>
+                  <th>Active</th>
+                  <th>Action</th>
                 </tr>
                 </tfoot>
               </table>

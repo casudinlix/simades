@@ -32,7 +32,7 @@
   <![endif]-->
 <link rel="icon" href="<?php echo icon()?>pc.png" type="image/x-icon" />
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue fixed sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
 
