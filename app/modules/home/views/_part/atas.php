@@ -107,7 +107,7 @@
                         </div>
                       </div>
                     </a>
-                  </li> 
+                  </li>  
                   <!-- end task item -->
                 </ul>
               </li>
