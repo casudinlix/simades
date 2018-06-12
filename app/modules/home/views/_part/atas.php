@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="<?php echo tema()?>bower_components/Ionicons/css/ionicons.min.css">
   <!-- DataTables -->
      <link rel="stylesheet" href="<?php echo tema()?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+     
+     <link rel="stylesheet" href="<?php echo tema()?>data.css">
+     <link rel="stylesheet" href="<?php echo tema()?>data2.css">
 <link rel="stylesheet" href="<?php echo tema()?>iCheck/all.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo tema()?>dist/css/skins/_all-skins.min.css">
@@ -104,7 +107,7 @@
                         </div>
                       </div>
                     </a>
-                  </li>
+                  </li> 
                   <!-- end task item -->
                 </ul>
               </li>

@@ -32,7 +32,7 @@ if ($cek->num_rows()>0) {
 	}
 	 
 	
-	$this->session->set_userdata($session );
+	$this->session->set_userdata($session);
 	redirect('home','refresh');
 }else{
 	

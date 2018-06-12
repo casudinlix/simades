@@ -32,11 +32,11 @@
            <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Nama Group</th>
-                  <th>Deskripsi</th>
+                  <th class="info">Nama Group</th>
+                  <th class="info">Deskripsi</th>
                   
                    
-                  <th>Action</th>
+                  <th class="danger">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -61,10 +61,10 @@
    <?php endforeach;?>             
                 <tfoot>
                 <tr>
-                  <th>Nama Group</th>
-                  <th>Deskripsi</th>
+                  <th class="info">Nama Group</th>
+                  <th class="info">Deskripsi</th>
                    
-                  <th>Action</th>
+                  <th class="danger">Action</th>
                 </tr>
                 </tfoot>
               </table>

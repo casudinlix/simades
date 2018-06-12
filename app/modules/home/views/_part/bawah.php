@@ -2,8 +2,8 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Tamplet Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved. Develop &copy; <?php echo date('Y')?> By <a>Casudin</a>
   </footer>
 
   <!-- Control Sidebar -->
@@ -42,28 +42,8 @@
               </div>
             </a>
           </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                <p>nora@example.com</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                <p>Execution time 5 seconds</p>
-              </div>
-            </a>
-          </li>
+           
+           
         </ul>
         <!-- /.control-sidebar-menu -->
 
@@ -210,6 +190,8 @@
 <script src="<?php echo tema()?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- DataTables -->
 <script src="<?php echo tema()?>bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo tema()?>data.js"></script>
+<script src="<?php echo tema()?>data2.js"></script>
 <script src="<?php echo tema()?>bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
 <script src="<?php echo tema()?>bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
@@ -238,7 +220,10 @@ function angka(evt) {
 <script>
   $(function () {
     $('#example1').DataTable({
-      
+      "processing": true,
+      "responsive": true,
+       "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+      "pageLength": 5 
     })
     $('#example2').DataTable({
       'paging'      : true,

@@ -33,12 +33,12 @@
            <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>NIP</th>
-                  <th>Nama</th>
-                  <th>Email</th>
-                  <th>Group</th>
-                  <th>Active</th>
-                  <th>Action</th>
+                  <th class="info">NIP</th>
+                  <th class="info">Nama</th>
+                  <th class="info">Email</th>
+                  <th class="info">Group</th>
+                  <th class="info">Active</th>
+                  <th class="danger">Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -74,12 +74,12 @@
    <?php endforeach;?>             
                 <tfoot>
                 <tr>
-                  <th>NIP</th>
-                  <th>Nama</th>
-                  <th>Email</th>
-                  <th>Group</th>
-                  <th>Active</th>
-                  <th>Action</th>
+                  <th class="info">NIP</th>
+                  <th class="info">Nama</th>
+                  <th class="info">Email</th>
+                  <th class="info">Group</th>
+                  <th class="info">Active</th>
+                  <th class="danger">Action</th>
                 </tr>
                 </tfoot>
               </table>
