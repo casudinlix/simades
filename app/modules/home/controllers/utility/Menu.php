@@ -22,12 +22,12 @@ public function __construct()
 		$data['group']=$this->home->getprofil($this->session->userdata('user_login_id'))->row();
 		$data['title']="Akses Menu";
 		$data['app']=$this->home->getapp()->row();
-		
+
 		$data['menu']=$this->home->getuser()->result();
 		$this->load->view('_part/atas', $data);
 		$this->load->view('utility/utilitymenu', $data);
 		$this->load->view('_part/bawah', $data);
-		
+
 	}
 	function addmenuakses(){
 		if ($this->access->getcreate($this->session->userdata('group_id'))==FALSE) {
@@ -39,7 +39,7 @@ public function __construct()
 		$data['title']="Akses Menu";
 		$data['app']=$this->home->getapp()->row();
 		$data['user']=$this->home->getuserdetil(base64_decode($this->uri->segment(5)))->row();
-		$data['menu']=$this->home->getpermission(base64_decode($this->uri->segment(5)))->result();	
+		$data['menu']=$this->home->getpermission(base64_decode($this->uri->segment(5)))->result();
 		$data['menulist']=$this->home->getmenulist()->result();
 		$this->load->view('_part/atas', $data);
 		$this->load->view('utility/utilitymenuadd', $data);

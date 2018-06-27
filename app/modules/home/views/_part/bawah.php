@@ -42,8 +42,8 @@
               </div>
             </a>
           </li>
-           
-           
+
+
         </ul>
         <!-- /.control-sidebar-menu -->
 
@@ -220,10 +220,12 @@ function angka(evt) {
 <script>
   $(function () {
     $('#example1').DataTable({
+       "autoWidth"   : true,
+        "searching":      true,
       "processing": true,
       "responsive": true,
        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-      "pageLength": 5 
+      "pageLength": 5
     })
     $('#example2').DataTable({
       'paging'      : true,
@@ -249,14 +251,14 @@ function angka(evt) {
     "bJQueryUI": true,
     "sPaginationType": "full_numbers",
     "sDom": '<""l>t<"F"fp>'
-  });  
+  });
   $('.sidebar-menu').tree();
   $('#select').select2({});
   $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
       checkboxClass: 'icheckbox_minimal-blue',
       radioClass   : 'iradio_minimal-blue'
     });
-  
+
 });
 </script>
 
@@ -273,7 +275,7 @@ if ($this->session->flashdata('access')):
 <script>
 swal("Akses Di Tolak!", "Anda Tidak Di Ijinkan Akses!", "error")</script>
 <?php endif;?>
- 
+
 <script>
   $(document).ready(function () {
     $('.sidebar-menu').tree()

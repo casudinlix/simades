@@ -1,0 +1,11 @@
+SELECT master_warga.id,master_warga.nik,master_warga.nama,master_kk.no_kk,
+master_warga.tempatlahir,master_warga.tanggallahir,master_rtrw.blok,master_rtrw.rtrw,
+master_golongan_darah.nama_gol_darah,
+master_agama.nama_agama,master_status_pendidikan.nama_pendidikan AS status_pendidikan ,master_pendidikan_kk.nama_pend_kk,master_pekerjaan.nama_pekerjaan,
+master_kawin.nama_kawin,master_warganegara.nama_wn,master_warga.foto,master_status.nama_status AS status_warga
+
+FROM master_warga INNER JOIN master_kk ON(master_warga.id_kk=master_kk.id)
+INNER JOIN master_rtrw ON(master_warga.rtrw_id=master_rtrw.id) INNER JOIN master_golongan_darah
+ON(master_warga.golongan_darah_id=master_golongan_darah.id)
+INNER JOIN master_agama on(master_warga.agama_id=master_agama.id) INNER JOIN master_status_pendidikan
+ON(master_warga.pendidikan_id=master_status_pendidikan.id) INNER JOIN master_pendidikan_kk on(master_warga.pendidikan_kk_id=master_pendidikan_kk.id) INNER JOIN master_pekerjaan ON(master_warga.pekerjaan_id=master_pekerjaan.id) INNER JOIN master_kawin on(master_warga.status_kawin=master_kawin.id) INNER JOIN master_warganegara on(master_warga.warganegara_id=master_warganegara.id) INNER JOIN master_status ON(master_warga.status=master_status.id) 

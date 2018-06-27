@@ -6,7 +6,7 @@
         Akses
         <small>Data Akses Menu Aplikasi</small>
       </h1>
-      
+
     </section>
 
     <!-- Main content -->
@@ -16,9 +16,9 @@
       <div class="box">
         <div class="box-header with-border">
           <h3 class="box-title">
-             
-             
-             
+
+
+
           </h3>
 
           <div class="box-tools pull-right">
@@ -49,20 +49,20 @@
   <?php else:?>
     <td><span class="label pull-right bg-red">TIDAK</span></td>
   <?php endif;?>
- 
- 
+
+
 <td>
   <a class="btn btn-success" href="<?php echo site_url('home/utility/menu/add/').clean($key->id)?>"><i class="fa fa-check" title="Tambah Hak Akses"></i></a>
 </td>
- 
 
-                  
+
+
    </tr>
-   <?php endforeach;?>             
+   <?php endforeach;?>
                 <tfoot>
                 <tr>
-                  <th class="info">Nama User</th>
-                   
+                  <th class="info">Nama Pengguna</th>
+
                   <th class="info">Email</th>
                    <th class="info">Active</th>
                   <th class="warning">Action</th>

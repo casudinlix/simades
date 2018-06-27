@@ -1,4 +1,4 @@
- 
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -13,7 +13,7 @@ public function __construct()
   }
 	function getprofil($id){
 	return	$this->db->get_where('view_users',array('users_id'=>$id));
-		
+
 	}
 	function getmenulist(){
 		return $this->db->get('menus');
@@ -21,7 +21,7 @@ public function __construct()
 
 	function get_level_menu($parent){
 		$result = $this->db->get_where('menus',['id' => $parent])->row_array();
-		
+
 		return $result['level'] + 1;
 	}
 	function menudetil($id){
@@ -52,7 +52,9 @@ function getuserall(){
 function getgroup(){
 	return $this->db->get('users_group');
 }
-
+function getwarga(){
+  return $this->db->get('view_warga');
+}
 }
 
 /* End of file Home_model.php */
