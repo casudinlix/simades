@@ -53,7 +53,46 @@ function getgroup(){
 	return $this->db->get('users_group');
 }
 function getwarga(){
-  return $this->db->get('view_warga');
+  return  $this->db->query("SELECT * FROM view_warga WHERE id >0");
+
+
+}
+function getkk(){
+  return $this->db->get('view_kk');
+}
+function getrt(){
+  return $this->db->get('master_rtrw');
+
+}
+function getagama(){
+  return $this->db->get('master_agama');
+}
+function getpendidikan(){
+  return $this->db->get('master_pendidikan_kk');
+}
+function getstatuspendidikan(){
+return $this->db->get('master_status_pendidikan');
+}
+function getpendkk(){
+    return $this->db->get('master_pendidikan_kk');
+
+}
+function getpekerjaan(){
+    return $this->db->get('master_pekerjaan');
+
+}
+function statuskawin(){
+    return $this->db->get('master_kawin');
+
+}
+function getwn(){
+  return $this->db->get('master_warganegara');
+}
+function getgoldarah(){
+  return $this->db->get('master_golongan_darah');
+}
+function getstatus(){
+  return $this->db->get('master_status');
 }
 }
 

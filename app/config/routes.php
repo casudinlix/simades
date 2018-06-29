@@ -87,3 +87,5 @@ $route['dashboard/utility/menu/delete/(:any)'] =  "dashboard/permission/permissi
 
 //data master
 $route['home/master/warga'] =  "home/warga/warga";
+$route['home/master/warga/add'] =  "home/warga/warga/addwarga";
+$route['home/master/warga/save'] =  "home/warga/warga/savewarga";

@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="box-body">
-           <table id="example1" class="table table-bordered table-striped">
+           <table id="example1" class="table table-bordered table-striped" style="width:100%">
                 <thead>
                 <tr>
                   <th class="info">Nama Menu</th>

@@ -3,10 +3,10 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Tambah Akses Baru 
-        
+        Tambah Akses Baru
+
       </h1>
-       
+
     </section>
 
     <section class="content">
@@ -16,7 +16,7 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-               
+
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -31,18 +31,18 @@
                   <label for="exampleInputPassword1">Group</label>
                   <input type="tex" class="form-control" id="exampleInputPassword1" value="<?php echo $user->group_name?>" readonly>
                 </div>
-                 
-                 
+
+
               </div>
               <!-- /.box-body -->
 
-               
-             
+
+
           </div>
           <!-- /.box -->
 
           <!-- Form Element sizes -->
-           
+
           <!-- /.box -->
 
           <div class="box box-danger" >
@@ -51,12 +51,12 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                   
+
                   <th>Nama menu</th>
-                    
+
                   <th>Action</th>
                 </tr>
-                 
+
                 </thead>
                 <tbody>
                 <tr>
@@ -65,14 +65,14 @@
  <td><a class="btn btn-danger" href="#" onclick="hapuspermission('<?php echo $key->id?>')"><i class="fa fa-trash-o" title="Active menu"></i></a></td>
 </tr>
 <?php endforeach;?>
-                 
+
                 </tr>
               </tbody>
             </table>
             </div>
-          
+
           </div>
-          
+
         </div>
         <!--/.col (left) -->
         <!-- right column -->
@@ -80,29 +80,29 @@
           <!-- Horizontal Form -->
           <div class="box box-info">
             <div class="box-header with-border">
-               
+
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            
+
               <div class="box-body">
                 <div class="form-group">
                   <label for="inputEmail3" class="col-sm-2 control-label">Pilih Menu</label>
 
                   <div class="col-sm-10">
-                    <select name="menuid" id="select" class="col-sm-6 control-label" required="">
+                    <select name="menuid" class="col-sm-6 control-label select" required="">
                       <option value=""></option>
-                    
+
                        <?php foreach($menulist as $key):?>
         <option value="<?php echo $key->id?>"><?php echo $key->id.". ".$key->menu?></option>
                        <?php endforeach;?>
                     </select>
                   </div>
                 </div>
-                 
+
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
-                     
+
                   </div>
                 </div>
               </div>
@@ -116,7 +116,7 @@
           </div>
           <!-- /.box -->
           <!-- general form elements disabled -->
-           
+
           </div>
           <!-- /.box -->
         </div>
@@ -125,5 +125,5 @@
       <!-- /.row -->
     </section>
     <!-- /.content -->
-  
+
   <!-- /.content-wrapper -->

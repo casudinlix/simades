@@ -1,5 +1,5 @@
 <?php
- 
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Menuconfig extends MX_Controller {
@@ -11,7 +11,7 @@ public function __construct()
       $this->load->model('home_model','home');
       $this->load->model('m_global','global');
       if (!$this->session->userdata('login')==TRUE) {
-	  	
+
 	  	$this->session->set_flashdata('error', 'value');
 	  	redirect('welcome','refresh');
 	  }
@@ -24,16 +24,16 @@ public function __construct()
 			redirect($_SERVER['HTTP_REFERER']);
 
 		}
-		 
+
 		$data['group']=$this->home->getprofil($this->session->userdata('user_login_id'))->row();
 		$data['title']="Menu";
 		$data['app']=$this->home->getapp()->row();
-		
+
 		$data['menu']=$this->home->getmenulist()->result();
 		$this->load->view('_part/atas', $data);
 		$this->load->view('configuration/menuv', $data);
 		$this->load->view('_part/bawah', $data);
-		
+
 	}
 	function addmenu(){
 		if ($this->access->getcreate($this->session->userdata('group_id'))==FALSE) {
@@ -57,20 +57,13 @@ function savemenu(){
 
 		}
 		$this->db->trans_begin();
-
-
 			$value = [
 				'menu'			=> $this->input->post('namamenu',TRUE),
-
 				'parent'		=> $this->input->post('parent',TRUE),
 				'link'			=> $this->input->post('link',TRUE),
 				'is_published'	=> 1,
-				'menu_order'	=> 1,
-
-
-			];
+				'menu_order'	=> 1];
 			$parent=$this->input->post('parent',TRUE);
-
 			if($parent == 0) {
 				$value['level'] = 0;
 				$value['icon'] 	= $this->input->post('icon',TRUE);
@@ -167,7 +160,7 @@ $this->session->set_flashdata('susscess','success');
 redirect('home/menu');
 exit();
 
-		
+
 
 }
 }

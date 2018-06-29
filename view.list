@@ -8,4 +8,7 @@ FROM master_warga INNER JOIN master_kk ON(master_warga.id_kk=master_kk.id)
 INNER JOIN master_rtrw ON(master_warga.rtrw_id=master_rtrw.id) INNER JOIN master_golongan_darah
 ON(master_warga.golongan_darah_id=master_golongan_darah.id)
 INNER JOIN master_agama on(master_warga.agama_id=master_agama.id) INNER JOIN master_status_pendidikan
-ON(master_warga.pendidikan_id=master_status_pendidikan.id) INNER JOIN master_pendidikan_kk on(master_warga.pendidikan_kk_id=master_pendidikan_kk.id) INNER JOIN master_pekerjaan ON(master_warga.pekerjaan_id=master_pekerjaan.id) INNER JOIN master_kawin on(master_warga.status_kawin=master_kawin.id) INNER JOIN master_warganegara on(master_warga.warganegara_id=master_warganegara.id) INNER JOIN master_status ON(master_warga.status=master_status.id) 
+ON(master_warga.pendidikan_id=master_status_pendidikan.id) INNER JOIN master_pendidikan_kk on(master_warga.pendidikan_kk_id=master_pendidikan_kk.id) INNER JOIN master_pekerjaan ON(master_warga.pekerjaan_id=master_pekerjaan.id) INNER JOIN master_kawin on(master_warga.status_kawin=master_kawin.id) INNER JOIN master_warganegara on(master_warga.warganegara_id=master_warganegara.id) INNER JOIN master_status ON(master_warga.status=master_status.id)
+
+SELECT master_kk.id,master_kk.no_kk,master_warga.nama
+FROM master_kk INNER JOIN master_warga ON(master_kk.id_kepala=master_warga.id)

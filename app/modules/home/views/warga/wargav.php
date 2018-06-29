@@ -17,20 +17,19 @@
         <div class="box-header with-border">
           <h3 class="box-title">
 
-            <a href="<?php echo site_url('home/menu/add') ?>" class="btn btn-info" title="Tambah Menu Baru"><i class="fa fa-plus"></i></a>
+            <a href="<?php echo site_url('home/master/warga/add') ?>" class="btn btn-info" title="Tambah Data Baru"><i class="fa fa-plus"></i></a>
 
           </h3>
 
           <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
-                    title="Collapse">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
               <i class="fa fa-minus"></i></button>
 
 
           </div>
         </div>
         <div class="box-body">
-           <table id="example1" class="table table-bordered table-striped">
+           <table id="example1" class="table table-bordered table-striped" style="width:100%">
                 <thead>
                 <tr>
                   <th class="info">NIK</th>
@@ -51,9 +50,9 @@
                 <tbody>
                 <tr>
                   <?php foreach ($warga as $key): ?>
-                    <td><?php echo $key->nik ?></td>
+                    <td><a data-toggle="tooltip" title="Detil"><?php echo $key->nik ?></a></td>
                       <td><?php echo $key->nama ?></td>
-                        <td><a><?php echo $key->no_kk ?></a></td>
+                        <td><a data-toggle="tooltip" title="Detil"><?php echo $key->no_kk ?></a></td>
 <?php $ttl=new datetime($key->tanggallahir);
 $today=new DateTime();
 $umur=$today->diff($ttl) ?>
@@ -64,7 +63,7 @@ $umur=$today->diff($ttl) ?>
     <td><?php echo $key->nama_pekerjaan ?></td>
       <td><?php echo $key->nama_kawin ?></td>
         <td><?php echo $key->status_warga ?></td>
-          <td>xx</td>
+          <td><a class="btn btn-warning" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil"></i></a></td>
                   </tr>
                   <?php endforeach; ?>
 

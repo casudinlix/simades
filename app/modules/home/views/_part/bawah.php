@@ -199,7 +199,10 @@
 <script src="<?php echo tema()?>iCheck/icheck.min.js"></script>
 <script src="<?php echo tema()?>bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-
+<!-- InputMask -->
+<script src="<?php echo tema()?>bower_components/input-mask/jquery.inputmask.js"></script>
+<script src="<?php echo tema()?>bower_components/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="<?php echo tema()?>bower_components/input-mask/jquery.inputmask.extensions.js"></script>
 <script src="<?php echo tema()?>dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo tema()?>dist/js/demo.js"></script>
@@ -215,12 +218,15 @@ function angka(evt) {
 }
 
 
+
 </script>
 <!-- page script -->
 <script>
   $(function () {
     $('#example1').DataTable({
        "autoWidth"   : true,
+       "bAutoWidth": false,
+       "scrollX": true,
         "searching":      true,
       "processing": true,
       "responsive": true,
@@ -253,7 +259,9 @@ function angka(evt) {
     "sDom": '<""l>t<"F"fp>'
   });
   $('.sidebar-menu').tree();
-  $('#select').select2({});
+  $('.select').select2({});
+
+  $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
   $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
       checkboxClass: 'icheckbox_minimal-blue',
       radioClass   : 'iradio_minimal-blue'
@@ -261,7 +269,12 @@ function angka(evt) {
 
 });
 </script>
-
+<?php
+if ($this->session->flashdata('error')):
+  ?>
+<script>
+swal("Error!", "Data Error!", "error")</script>
+<?php endif;?>
 <?php
 if ($this->session->flashdata('susscess')):
   ?>

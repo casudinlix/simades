@@ -30,6 +30,9 @@ function checkperm(){
 function clean($string) {
    return str_replace(array('=', '.', '='),array('', '%', '_'),base64_encode($string));
 }
+function tanggal($data){
+	return date("Y-m-d", strtotime($data));
+}
 function group(){
 $ci =& get_instance();
 $ci->load->model('home_model','home');
