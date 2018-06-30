@@ -63,7 +63,7 @@ $umur=$today->diff($ttl) ?>
     <td><?php echo $key->nama_pekerjaan ?></td>
       <td><?php echo $key->nama_kawin ?></td>
         <td><?php echo $key->status_warga ?></td>
-          <td><a class="btn btn-warning" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil"></i></a></td>
+          <td><a href="<?php echo site_url('home/master/warga/edit/').clean($key->id) ?>" class="btn btn-warning" data-toggle="tooltip" title="Edit"><i class="fa fa-pencil"></i></a></td>
                   </tr>
                   <?php endforeach; ?>
 

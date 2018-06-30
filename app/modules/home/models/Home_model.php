@@ -94,6 +94,10 @@ function getgoldarah(){
 function getstatus(){
   return $this->db->get('master_status');
 }
+function getwargadetil($data){
+  return $this->db->get_where('view_warga',['id'=>$data]);
+
+}
 }
 
 /* End of file Home_model.php */
