@@ -50,9 +50,9 @@
                 <tbody>
                 <tr>
                   <?php foreach ($warga as $key): ?>
-                    <td><a data-toggle="tooltip" title="Detil"><?php echo $key->nik ?></a></td>
+<td><a href="<?php echo site_url('home/master/warga/detil/').clean($key->id) ?>" data-toggle="tooltip" title="Detil"><?php echo $key->nik ?></a></td>
                       <td><?php echo $key->nama ?></td>
-                        <td><a data-toggle="tooltip" title="Detil"><?php echo $key->no_kk ?></a></td>
+    <td><a  data-toggle="tooltip" title="Detil"><?php echo $key->no_kk ?></a></td>
 <?php $ttl=new datetime($key->tanggallahir);
 $today=new DateTime();
 $umur=$today->diff($ttl) ?>

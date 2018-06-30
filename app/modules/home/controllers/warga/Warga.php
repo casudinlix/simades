@@ -168,5 +168,29 @@ class Warga extends MX_Controller{
 
     redirect('home/master/warga/');
   }
+function detilwarga(){
+  if ($this->access->getupdate($this->session->userdata('group_id'))==FALSE) {
+    $this->session->set_flashdata('access', 'value');
+    redirect($_SERVER['HTTP_REFERER']);
 
+  }
+  $data['group']=$this->home->getprofil($this->session->userdata('user_login_id'))->row();
+  $data['title']="|Edit Warga";
+  $data['app']=$this->home->getapp()->row();
+  $id=base64_decode($this->uri->segment(5));
+  $data['warga']=$this->home->getwargadetil($id)->row();
+  $data['kk']=$this->home->getkk()->result();
+  $data['rt']=$this->home->getrt()->result();
+  $data['agama']=$this->home->getagama()->result();
+  $data['statuspend']=$this->home->getstatuspendidikan()->result();
+  $data['pend']=$this->home->getpendidikan()->result();
+  $data['pekerjaan']=$this->home->getpekerjaan()->result();
+  $data['kawin']=$this->home->statuskawin()->result();
+  $data['wn']=$this->home->getwn()->result();
+  $data['darah']=$this->home->getgoldarah()->result();
+  $data['status']=$this->home->getstatus()->result();
+  $this->load->view('_part/atas', $data);
+$this->load->view('warga/wargadetil', $data);
+  $this->load->view('_part/bawah', $data);
+}
 }

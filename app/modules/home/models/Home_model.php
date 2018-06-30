@@ -98,6 +98,9 @@ function getwargadetil($data){
   return $this->db->get_where('view_warga',['id'=>$data]);
 
 }
+function getdatakk(){
+  return $this->db->get('view_datakk');
+}
 }
 
 /* End of file Home_model.php */
