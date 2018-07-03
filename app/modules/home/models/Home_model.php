@@ -99,7 +99,13 @@ function getwargadetil($data){
 
 }
 function getdatakk(){
-  return $this->db->get('view_datakk');
+    return  $this->db->query("SELECT * FROM view_datakk WHERE kk_id >0");
+}
+function getkkdetil($data){
+  return $this->db->get_where('view_warga',['id_kk'=>$data]);
+}
+function getdatakkdetil($data){
+  return $this->db->get_where('view_datakk',['kk_id'=>$data]);
 }
 }
 

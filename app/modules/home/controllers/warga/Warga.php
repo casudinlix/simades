@@ -91,7 +91,6 @@ class Warga extends MX_Controller{
     		} else {
     $this->db->trans_commit();
     		}
-    echo json_encode($result);
 
     $this->session->set_flashdata('susscess','value');
 

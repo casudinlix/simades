@@ -17,7 +17,7 @@
         <div class="box-header with-border">
           <h3 class="box-title">
 
-            <a href="<?php echo site_url('home/master/warga/add') ?>" class="btn btn-info" title="Tambah Data Baru"><i class="fa fa-plus"></i></a>
+            <a href="<?php echo site_url('home/master/kk/add') ?>" class="btn btn-info" title="Tambah Data Baru"><i class="fa fa-plus"></i></a>
 
           </h3>
 
@@ -48,7 +48,7 @@
                 <tbody>
                 <tr>
   <?php foreach ($kk as $key): ?>
-    <td><a><?php echo $key->no_kk ?></a></td>
+    <td><a href="<?php echo site_url('home/master/kk/detil/').clean($key->no_kk).'/'.clean($key->kk_id)."/".clean($key->warga_id)?>"><?php echo $key->no_kk ?></a></td>
     <td><?php echo $key->nama ?></td>
     <td><a href="<?php echo site_url('home/master/warga/detil/').clean($key->warga_id)?>"><?php echo $key->nik ?></a></td>
     <?php $ttl=new datetime($key->tanggallahir);

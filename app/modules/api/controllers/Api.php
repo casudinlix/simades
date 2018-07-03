@@ -11,7 +11,7 @@ class Api extends MX_Controller {
         exit('No direct script access allowed :)');
     }
     if (!$this->session->userdata('login')==TRUE) {
-      
+
       $this->session->set_flashdata('error', 'value');
       redirect('welcome','refresh');
     }
@@ -20,8 +20,8 @@ class Api extends MX_Controller {
     }
     public function loginapp()
     {
-        
-        
+
+
     }
 function nonactivemenu(){
   if ($this->access->getupdate($this->session->userdata('group_id'))==FALSE) {
@@ -29,10 +29,10 @@ function nonactivemenu(){
       show_404();
 
     }
-      
+
   $data=array('is_published'=>0);
   $this->db->where('id', $this->uri->segment(3));
- 
+
   $this->db->update('menus', $data);
 }
 function activemenu(){
@@ -41,10 +41,10 @@ function activemenu(){
       show_404();
 
     }
-      
+
   $data=array('is_published'=>1);
   $this->db->where('id', $this->uri->segment(3));
- 
+
   $this->db->update('menus', $data);
 
 }
@@ -55,7 +55,7 @@ function hapusmenu(){
 
     }
     $this->db->where('id', $this->uri->segment(3));
- 
+
   $this->db->delete('menus');
 
 
@@ -67,7 +67,7 @@ function hapusgroup(){
 
     }
     $this->db->where('id', $this->uri->segment(3));
- 
+
   $this->db->delete('users_group');
 }
 function hapuspermission(){
@@ -77,7 +77,7 @@ function hapuspermission(){
 
     }
     $this->db->where('id', $this->uri->segment(3));
- 
+
   $query=$this->db->delete('users_permission');
 
 }
@@ -87,7 +87,7 @@ if ($this->access->getupdate($this->session->userdata('group_id'))==FALSE) {
       show_404();
 
     }
-      
+
   $data=array('active'=>1);
   $this->db->where('id', $this->uri->segment(3));
   $this->db->update('users_login', $data);
@@ -98,10 +98,20 @@ if ($this->access->getupdate($this->session->userdata('group_id'))==FALSE) {
       show_404();
 
     }
-      
+
   $data=array('active'=>0);
   $this->db->where('id', $this->uri->segment(3));
   $this->db->update('users_login', $data);
 }
-}
+function hapusanggota(){
+  if ($this->access->getdelete($this->session->userdata('group_id'))==FALSE) {
+     $this->session->set_flashdata('access', 'value');
+     show_404();
 
+   }
+   $data=array('id_kk'=>0);
+   $this->db->where('id', $this->uri->segment(3));
+
+  $query=$this->db->update('master_warga',$data);
+}
+}

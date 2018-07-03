@@ -94,3 +94,7 @@ $route['home/master/warga/edit/(:any)'] = "home/warga/warga/editwarga/$1";
 $route['home/master/warga/update'] =  "home/warga/warga/updatewarga";
 
 $route['home/master/kk'] =  "home/kk/kk";
+$route['home/master/kk/add'] =  "home/kk/kk/addkk";
+$route['home/master/kk/detil/(:any)/(:any)/(:any)'] =  "home/kk/kk/detilkk/$1/$1/$1";
+$route['home/master/kk/save'] =  "home/kk/kk/savekk";
+$route['home/master/kk/update'] =  "home/kk/kk/updatekk";
